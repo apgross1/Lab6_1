@@ -21,7 +21,7 @@ public class GameRuleCardsDAL   {
 		try {
 			tx = session.beginTransaction();
 
-			List rules = session.createQuery("FROM GameRuleCardsDomainModel").list();
+			List rules = session.createQuery("FROM GameRuleCardsDomainModel ORDER BY RULEID, PICKORDER").list();
 			for (Iterator iterator = rules.iterator(); iterator.hasNext();) {
 				GameRuleCardsDomainModel rle = (GameRuleCardsDomainModel) iterator.next();
 				RuleCards.add(rle);

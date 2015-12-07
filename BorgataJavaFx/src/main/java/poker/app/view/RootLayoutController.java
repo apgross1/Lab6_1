@@ -4,6 +4,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import domain.GameRuleDomainModel;
 import enums.eGame;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -15,12 +16,14 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioMenuItem;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.FileChooser;
 import poker.app.MainApp;
 import pokerBase.Rule;
+import logic.GameRuleBLL;
 
 /**
  * The controller for the root layout. The root layout provides the basic
@@ -33,7 +36,9 @@ public class RootLayoutController implements Initializable {
 
     // Reference to the main application
     private MainApp mainApp;
-
+    
+    @FXML
+    private MenuBar mb;
     @FXML
     private Menu mnuGame;
     
@@ -62,8 +67,24 @@ public class RootLayoutController implements Initializable {
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-
-	 
+		Menu m = new Menu();
+		m.setText("Rule Menu");
+		ToggleGroup tg = new ToggleGroup();
+		
+		for(GameRuleDomainModel gr : GameRuleBLL.getRules()) {
+			RadioMenuItem menItem = new RadioMenuItem();
+			menItem.setText(gr.getRULENAME());
+			menItem.setToggleGroup(tg);
+			
+			if (gr.getDEFAULTGAME() == 1) {
+				menItem.setSelected(true);
+			}
+			
+			m.getItems().add(menItem);
+			
+		}
+		mb.getMenus().add(m);
+		
 /*		CheckMenuItem item1 = new CheckMenuItem("5 card stud");
         item1.selectedProperty().addListener(new ChangeListener(){
             @Override

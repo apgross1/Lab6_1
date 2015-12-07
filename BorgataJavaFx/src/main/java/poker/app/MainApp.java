@@ -37,7 +37,7 @@ public class MainApp extends Application {
 	private Stage primaryStage;
 	private BorderPane rootLayout;
 
-	RootLayoutController rootController = null;
+	public RootLayoutController rootController = null;
 	private Table tbl;
 	
 	private int iGameType;

@@ -1,5 +1,6 @@
 domain\RuleDomainModel$1.class
 domain\TableDomainModel.class
+base\GameRuleDAL.class
 enums\eHandStrength$1.class
 enums\eHandStrength$8.class
 enums\eHandStrength$6.class
@@ -7,6 +8,7 @@ enums\eHandStrength$10.class
 enums\eHandStrength$3.class
 enums\eGame.class
 enums\eHandStrength.class
+base\GameRuleCardsDAL.class
 domain\RuleDomainModel.class
 domain\CardDomainModel$1.class
 pokerEnums\eGameState.class
@@ -15,6 +17,7 @@ enums\eRank.class
 domain\CardDomainModel.class
 enums\eHandStrength$5.class
 domain\GamePlayDomainModel.class
+domain\GameRuleCardsDomainModel.class
 enums\eHandStrength$2.class
 domain\HandDomainModel.class
 pokerEnums\eDrawAction.class
@@ -22,7 +25,9 @@ enums\eSuit.class
 enums\eHandStrength$7.class
 enums\eCardNo.class
 enums\eHandStrength$4.class
+util\HibernateUtil.class
 enums\eHandStrength$11.class
 domain\DeckDomainModel.class
+domain\GameRuleDomainModel.class
 enums\eHandStrength$9.class
 pokerEnums\eEvalType.class
